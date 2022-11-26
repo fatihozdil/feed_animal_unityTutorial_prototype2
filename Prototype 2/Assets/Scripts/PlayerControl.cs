@@ -23,12 +23,19 @@ public class PlayerControl : MonoBehaviour
         {
             transform.position = new Vector3(-boundary, pos.y, pos.z);
         }
+
         else if (transform.position.x > boundary)
         {
             transform.position = new Vector3(boundary, pos.y, pos.z);
         }
+
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
 
     }
 }
